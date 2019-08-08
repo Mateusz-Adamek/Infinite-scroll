@@ -1,8 +1,7 @@
-let koniecLicznik = 0;
+let endOfCounter = 0;
 
 
 function getData(url) {
-
     fetch(url)
         .then(response => response.json())
         .then(response => {
@@ -12,11 +11,9 @@ function getData(url) {
 
             beginOfData.innerHTML = "<br>---------- BEGIN OF DATA ----------<br><br>";
             endOfData.innerHTML = "<br>----- END OF DATA ------<br><br><br><br><br><br><br><br><br><br><br><br>";
-
             document.body.appendChild(beginOfData);
 
             for (let i in response) {
-
                 let pUserId = document.createElement('p');
                 let pUserName = document.createElement('p');
                 let pUserURL = document.createElement('p');
@@ -31,7 +28,6 @@ function getData(url) {
                 console.log(response[i])
                 // console.log(jsonObjArray[i]);
             }
-
             document.body.appendChild(endOfData);
         });
 }
@@ -52,9 +48,9 @@ window.onscroll = function () {
 
         getData("https://jsonplaceholder.typicode.com/users");
 
-        koniecLicznik += 1;
+        endOfCounter += 1;
 
-        console.log('Koniec strony = ' + koniecLicznik);
+        console.log('Koniec strony = ' + endOfCounter);
     }
 
 };
